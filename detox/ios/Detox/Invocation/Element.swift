@@ -43,7 +43,7 @@ class Element : NSObject {
 	}
 	
 	private var views : [NSObject] {
-		//TODO: Consider searching here in all windows from all scenes.
+		// TODO: Consider searching here in all windows from all scenes.
 		let array = (UIView.dtx_findViewsInKeySceneWindows(passing: predicate.predicateForQuery()) as! [NSObject])
 		
 		guard array.count > 0 else {
@@ -63,7 +63,7 @@ class Element : NSObject {
 			}
 			element = array[index]
 		} else {
-			//Will fail test if more than one element are resolved from the query
+			// Will fail test if more than one element are resolved from the query
 			guard array.count == 1 else {
 				dtx_fatalError("Multiple elements found for “\(self.description)”", viewDescription: failDebugAttributes)
 			}
