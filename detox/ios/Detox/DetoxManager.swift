@@ -10,7 +10,7 @@ import UIKit
 import DetoxSync
 import LNViewHierarchyDumper
 
-fileprivate let recordingManager : DetoxInstrumentsManager = {
+private let recordingManager : DetoxInstrumentsManager = {
 	return DetoxInstrumentsManager()
 }()
 
