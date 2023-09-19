@@ -10,7 +10,7 @@ import UIKit
 
 @inline(__always)
 @discardableResult
-fileprivate func async_action_dtx_try(completionHandler: @escaping ([String: Any]?, Error?) -> Void, blockToTry: () -> Void) -> Bool {
+private func async_action_dtx_try(completionHandler: @escaping ([String: Any]?, Error?) -> Void, blockToTry: () -> Void) -> Bool {
 	do {
 		try dtx_try(blockToTry)
 	} catch {
