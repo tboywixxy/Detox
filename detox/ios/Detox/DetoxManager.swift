@@ -177,7 +177,7 @@ public class DetoxManager : NSObject, WebSocketDelegate {
 
 		let semaphore = DispatchSemaphore(value: 1)
 
-		recordingManager.stopRecording { error in
+		recordingManager.stopRecording { _ in
 			semaphore.signal()
 		}
 
