@@ -22,7 +22,7 @@ fileprivate func async_expectation_dtx_try(completionHandler: @escaping (Error?)
 }
 
 @inline(__always)
-fileprivate func applyModifiers(_ input: Bool, modifiers: Set<String>) -> Bool {
+private func applyModifiers(_ input: Bool, modifiers: Set<String>) -> Bool {
 	var rv = input
 	
 	modifiers.forEach {
@@ -273,7 +273,7 @@ class DoubleExpectation : Expectation {
 	let tolerance : Double?
 	
 	required init(kind: String, modifiers: Set<String>, element: Element, timeout: TimeInterval, value: Double, tolerance: Double?) {
-		//Tolerances outside of [DBL_EPSILON, 1) yield well-defined but useless results, so clamp the tolerance.
+		// Tolerances outside of [DBL_EPSILON, 1) yield well-defined but useless results, so clamp the tolerance.
 		self.value = value
 		self.tolerance = tolerance != nil ? Double.minimum(Double.maximum(tolerance!, Double.ulpOfOne), 1.0 - Double.ulpOfOne) : nil
 		
