@@ -12,3 +12,4 @@ if [ -d aggregated-coverage ]; then
 else
   echo "Aggregated coverage directory was not found, skipping."
 fi
+
